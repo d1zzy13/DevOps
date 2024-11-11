@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    image: backend:2.0
+    networks:
+      - my-network
+    volumes:
+      - D:\VUZ\7sem\DevOps\LR2\data\data.txt:/app/data.txt
+    restart: always
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    image: frontend:2.0
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+    restart: always
+
+networks:
+  my-network:
+    driver: bridge
