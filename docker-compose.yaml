@@ -7,7 +7,7 @@ services:
     networks:
       - my-network
     volumes:
-      - ../data/data.txt:/app/data.txt
+      - ./data/data.txt:/app/data.txt
     restart: always
 
   frontend:
