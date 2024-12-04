@@ -7,7 +7,7 @@ services:
     networks:
       - my-network
     volumes:
-      - D:\VUZ\7sem\DevOps\LR2\data\data.txt:/app/data.txt
+      - ../data/data.txt:/app/data.txt
     restart: always
 
   frontend:
