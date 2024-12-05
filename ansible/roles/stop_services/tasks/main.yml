@@ -1,0 +1,5 @@
+- name: Остановка сервисов с помощью Docker Compose
+  shell: |
+    cd /mnt/d/ansible_project/devops && docker-compose stop
+  become: true
+  tags: stop_services
