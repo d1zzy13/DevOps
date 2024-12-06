@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    environment {
+        ANSIBLE_PLAYBOOK = "ansible/playbook.yml"  // Путь до playbook
+    }
+    stages {
+        stage('Подготовка окружения') {
+            steps {
+                script {
+                    echo "Этап 1: Подготовка окружения (установка Docker, клонирование репозиториев)"
+                }
+                sh """
+                    ansible-playbook ${ANSIBLE_PLAYBOOK} --tags docker_setup,clone_repository
+                """
+            }
+        }
+
+        stage('Запуск приложений') {
+            steps {
+                script {
+                    echo "Этап 2: Запуск приложений (Docker Compose)"
+                }
+                sh """
+                    ansible-playbook ${ANSIBLE_PLAYBOOK} --tags start_services
+                """
+            }
+        }
+    }
+}
