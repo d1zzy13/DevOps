@@ -1,21 +1,21 @@
 - name: Клонирование репозитория frontend
   git:
     repo: "https://github.com/d1zzy13/Frontend.git"
-    dest: "/mnt/d/ansible_project/frontend"
+    dest: "/mnt/с/ansible_project/frontend"
   become: true
   tags: clone_repository
 
 - name: Клонирование репозитория backend
   git:
     repo: "https://github.com/d1zzy13/Backend.git"
-    dest: "/mnt/d/ansible_project/backend"
+    dest: "/mnt/c/ansible_project/backend"
   become: true
   tags: clone_repository
 
 - name: Клонирование репозитория devops
   git:
     repo: "https://github.com/d1zzy13/DevOps.git"
-    dest: "/mnt/d/ansible_project/devops"
+    dest: "/mnt/c/ansible_project/devops"
   become: true
   tags: clone_repository
 

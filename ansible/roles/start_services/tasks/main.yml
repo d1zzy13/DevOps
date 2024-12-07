@@ -1,5 +1,5 @@
 - name: Запуск сервисов с помощью docker-compose
   shell: |
-    cd /mnt/d/ansible_project/devops && docker-compose up -d
+    cd /mnt/c/ansible_project/devops && docker-compose up -d
   become: true
   tags: start_services
