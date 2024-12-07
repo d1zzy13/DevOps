@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         ANSIBLE_PLAYBOOK = "ansible/playbook.yml"  // Путь до playbook
+        ANSIBLE_BECOME_PASS = "1239"  // Пароль для sudo
     }
     stages {
         stage('Подготовка окружения') {
