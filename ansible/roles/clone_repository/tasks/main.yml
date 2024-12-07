@@ -1,7 +1,7 @@
 - name: Клонирование репозитория frontend
   git:
     repo: "https://github.com/d1zzy13/Frontend.git"
-    dest: "/mnt/с/ansible_project/frontend"
+    dest: "/mnt/c/ansible_project/frontend"
   become: true
   tags: clone_repository
 
@@ -21,7 +21,7 @@
 
 - name: Создание папки data
   file:
-    path: /mnt/d/ansible_project/data
+    path: /mnt/c/ansible_project/data
     state: directory
     mode: '0755'
   become: true
@@ -30,7 +30,7 @@
 - name: Создание файла data.txt в папке data
   copy:
     content: ""
-    dest: /mnt/d/ansible_project/data/data.txt
+    dest: /mnt/c/ansible_project/data/data.txt
     mode: '0644'
   become: true
   tags: clone_repository
