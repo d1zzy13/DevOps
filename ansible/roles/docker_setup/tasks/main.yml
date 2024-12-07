@@ -24,7 +24,7 @@
 
 - name: Скачивание Docker
   apt:
-    name: docker-ce
+    name: docker.io
     state: present
   become: true
   tags: docker_setup
