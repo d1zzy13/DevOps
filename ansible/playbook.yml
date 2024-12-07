@@ -1,5 +1,6 @@
 - name: Управление сервисами
   hosts: localhost
+  connection: local
   roles:
     - docker_setup
     - clone_repository
